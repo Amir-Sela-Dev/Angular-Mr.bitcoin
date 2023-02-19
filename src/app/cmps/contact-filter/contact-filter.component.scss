@@ -1,0 +1,45 @@
+:host {
+    box-shadow: 0 0 2px 0 rgb(53 65 83 / 12%), 0 2px 4px 0 rgb(53 65 83 / 12%);
+    width: 100%;
+    height: fit-content;
+    max-width: 900px;
+    padding-inline-start: 0;
+    margin-block: 30px;
+
+    .contact-filter {
+        // border-bottom: #c9d3e0 solid 1px;
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+
+        input {
+            display: flex;
+            align-items: center;
+            width: 92%;
+            height: 49px;
+            border: none;
+            border-right: #c9d3e0 solid 1px;
+            padding-inline: 20px;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        button {
+            width: 8%;
+            height: 32px;
+            margin: 4px 8px;
+            font-size: 13px;
+            text-align: center;
+            border-radius: 4px;
+            color: #1f1f32;
+            background-color: #fff;
+            border: #1f1f32 solid 1px;
+
+            &:hover {
+                background-color: rgba(31, 31, 50, 0.04);
+            }
+        }
+    }
+}

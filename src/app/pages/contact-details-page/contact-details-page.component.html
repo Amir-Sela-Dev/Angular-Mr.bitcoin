@@ -1,0 +1,22 @@
+<section class="details flex">
+    <div *ngIf="contact" class="contact-details flex">
+        <div class="contact-info flex">
+            <div class="flex align-center">
+                <img src="https://robohash.org/{{contact._id}}" alt="" />
+                <div class="contact-main-info flex">
+                    <h2>Fullname: {{ contact.name }}</h2>
+                    <h2>Email: {{ contact.email }}</h2>
+                    <h2>Phone number: {{ contact.phone }}</h2>
+                </div>
+            </div>
+            <div class="contact-actions flex">
+                <a :to="`/contact/edit/${contact._id}`">
+                    <button>Edit</button>
+                </a>
+                <a to="/contact">
+                    <button>Go back</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

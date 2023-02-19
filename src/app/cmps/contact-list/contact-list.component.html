@@ -1,0 +1,27 @@
+<section class="full-list flex" *ngIf="contacts">
+    <div class="list-details flex">
+        <h3> {{contacts.length}} Contacts</h3>
+        <a :to="`/contact/edit`">
+            <button class="add">Create new contact</button>
+        </a>
+    </div>
+    <ul name="list" class="contact-list">
+        <div class="header flex">
+            <li key="name">
+                <div class="name">Name</div>
+            </li>
+            <li key="email">
+                <div class="Email">Email</div>
+            </li>
+            <li key="phone">
+                <div class="Phone">Phone</div>
+            </li>
+
+            <div class="actions" key="actions"></div>
+        </div>
+
+        <li class="contact-preview flex" *ngFor="let contact of contacts">
+            <ContactPreview (selectContact)="selectContact.emit($event)" [contact]=" contact"></ContactPreview>
+        </li>
+    </ul>
+</section>

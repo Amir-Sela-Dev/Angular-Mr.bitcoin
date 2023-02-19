@@ -1,0 +1,25 @@
+<article class="flex">
+    <div class="contact-name">
+        {{ contact.name }}
+    </div>
+    <div class="contact-email">
+        {{ contact.email }}
+    </div>
+    <div class="contact-phone">
+        {{ contact.phone }}
+    </div>
+    <div class="option-img" (click)="toogleModal()">
+        <img src="../../../assets/img/dots.png" alt="" />
+        <div class="modal" *ngIf="isOptionOpen">
+            <a :to="`/contact/${contact._id}`" (click)="onSelectContactId()">
+                <button class="modal-option">Details</button>
+            </a>
+            <a :to="`/contact/edit/${contact._id}`">
+                <button class="modal-option">Edit</button>
+            </a>
+            <button class="modal-option">
+                Remove
+            </button>
+        </div>
+    </div>
+</article>

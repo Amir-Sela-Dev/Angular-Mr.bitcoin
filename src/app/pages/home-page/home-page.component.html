@@ -1,0 +1,16 @@
+<main class="flex" *ngIf="user">
+    <div class="wraper flex">
+        <div class="user-info flex align-center justify-center">
+            <img src="{{user.imgUrl}}" alt="" />
+            <h2>{{ user.name }}</h2>
+        </div>
+
+        <div class="rate-info flex align-center justify-center">
+            <h3>
+                Your balance: <span>{{ user.balance }}฿</span>
+            </h3>
+            <h2>Currect BitCoin rate:</h2>
+            <div>1$<span class="e"> = </span> {{ rate | async }}฿</div>
+        </div>
+    </div>
+</main>
