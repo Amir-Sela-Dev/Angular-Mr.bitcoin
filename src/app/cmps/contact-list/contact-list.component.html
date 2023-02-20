@@ -1,7 +1,7 @@
 <section class="full-list flex" *ngIf="contacts">
     <div class="list-details flex">
         <h3> {{contacts.length}} Contacts</h3>
-        <a :to="`/contact/edit`">
+        <a [routerLink]="['/contact/edit']">
             <button class="add">Create new contact</button>
         </a>
     </div>
@@ -21,7 +21,7 @@
         </div>
 
         <li class="contact-preview flex" *ngFor="let contact of contacts">
-            <ContactPreview (selectContact)="selectContact.emit($event)" [contact]=" contact"></ContactPreview>
+            <ContactPreview [contact]=" contact" (remove)="remove.emit($event)"></ContactPreview>
         </li>
     </ul>
 </section>

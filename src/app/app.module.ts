@@ -13,7 +13,7 @@ import { ContactListComponent } from './cmps/contact-list/contact-list.component
 import { ContactFilterComponent } from './cmps/contact-filter/contact-filter.component';
 import { AppHeaderComponent } from './cmps/app-header/app-header.component';
 import { SideNavComponent } from './cmps/side-nav/side-nav.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,9 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

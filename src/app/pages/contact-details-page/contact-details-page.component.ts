@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Contact } from 'src/app/models/contact.model';
-import { lastValueFrom } from 'rxjs';
+import { lastValueFrom, Subscription } from 'rxjs';
 import { ContactService } from 'src/app/services/contact.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -11,15 +12,32 @@ import { ContactService } from 'src/app/services/contact.service';
 })
 export class ContactDetailsPageComponent implements OnInit {
 
-  constructor(private contactService: ContactService) { }
+  constructor(
+    private contactService: ContactService,
+    private route: ActivatedRoute,
+    private router: Router,
+  ) { }
 
   @Input() contactId!: string
 
-  contact!: Contact | undefined
+  contact!: Contact
+  subscription!: Subscription
 
   async ngOnInit() {
-    const contact = await lastValueFrom(this.contactService.getContactById(this.contactId))
-    this.contact = contact
+    this.subscription = this.route.data.subscribe(data => {
+      console.log(data);
+
+      this.contact = data['contact']
+    })
   }
+
+  onBack() {
+    this.router.navigateByUrl('/contact')
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe()
+  }
+
 
 }

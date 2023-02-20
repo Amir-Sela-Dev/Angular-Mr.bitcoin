@@ -10,11 +10,22 @@
         flex-direction: column;
         justify-content: center;
 
-        a {
+        .route {
             display: flex;
             align-items: center;
             height: 50px;
             padding: 15px 0 15px 23px;
+            cursor: pointer;
+
+            a {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                margin-top: 3px;
+                text-decoration: none;
+
+            }
 
             &:hover {
                 background-color: #4b4b5b;
@@ -25,6 +36,12 @@
         .isClicked {
             background-color: #1f1f32;
             border-left: #e98453 solid 3px;
+        }
+
+        img {
+            width: 20px;
+            height: 20px;
+            margin-inline-end: 15px;
         }
     }
 }

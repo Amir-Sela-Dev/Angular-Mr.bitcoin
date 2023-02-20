@@ -11,13 +11,13 @@
     <div class="option-img" (click)="toogleModal()">
         <img src="../../../assets/img/dots.png" alt="" />
         <div class="modal" *ngIf="isOptionOpen">
-            <a :to="`/contact/${contact._id}`" (click)="onSelectContactId()">
+            <a [routerLink]="['/contact', contact._id]">
                 <button class="modal-option">Details</button>
             </a>
-            <a :to="`/contact/edit/${contact._id}`">
+            <a (click)="onEditContact($event)">
                 <button class="modal-option">Edit</button>
             </a>
-            <button class="modal-option">
+            <button class="modal-option" (click)="onRemoveContact($event)">
                 Remove
             </button>
         </div>

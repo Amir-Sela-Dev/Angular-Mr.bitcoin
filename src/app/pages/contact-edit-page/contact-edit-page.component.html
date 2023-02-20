@@ -1,1 +1,29 @@
-<p>contact-edit-page works!</p>
+<section class="contact-edit flex">
+    <div class="contact-main">
+        <img src="https://robohash.org/{{contact._id || 'new'}}" alt="" />
+        <form class="contact-edit" [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="wraper flex justify-between">
+                <label for="name">Name:</label>
+                <input type="text" id="name" formControlName="name" [ngModel]="contact.name" />
+            </div>
+            <div class="wraper flex justify-between">
+                <label for="email">Email:</label>
+                <input type="text" id="email" formControlName="email" [ngModel]="contact.email" />
+            </div>
+            <div class="wraper flex justify-between">
+                <label for="phone">Phone number:</label>
+                <input type="text" id="phone" formControlName="phone" [ngModel]="contact.phone" />
+            </div>
+            <div class="actions">
+                <button *ngIf="contact._id" type="submit">Save</button>
+                <button *ngIf="!contact._id" type="submit">Add</button>
+                <a [routerLink]="['/contact']">
+                    <button class="modal-option">Back</button>
+                </a>
+                <button *ngIf="contact._id" (click)="onRemove($event)">
+                    Delete
+                </button>
+            </div>
+        </form>
+    </div>
+</section>

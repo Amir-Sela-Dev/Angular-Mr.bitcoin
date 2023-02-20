@@ -1,9 +1,23 @@
 <section class="side-nav">
     <nav>
-        <a to="/">Home</a>
-        <a to="/contact">Contact</a>
-        <a to="/stats">Stats</a>
-        <a to="/signup">Signup</a>
-        <a to="/about">About</a>
+        <div class="route" [routerLink]="['/']" [class.isClicked]="path === '/'">
+            <img src="../../../assets/img/home.svg" alt="">
+            <a>Home</a>
+        </div>
+        <div class="route" [class.isClicked]="path === '/contact'" [routerLink]="['/contact']">
+            <img src="../../../assets/img/contacts.svg" alt="">
+            <a>Contact</a>
+        </div>
+        <div class="route" [routerLink]="['/stats']" [class.isClicked]="path === '/stats'">
+            <img src="../../../assets/img/stats.svg" alt="">
+            <a>Stats</a>
+        </div>
+        <div class="route">
+            <a to="/signup">Signup</a>
+        </div>
+        <div class="route">
+            <a to="/about">About</a>
+        </div>
+
     </nav>
 </section>

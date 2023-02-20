@@ -12,29 +12,21 @@ export class ContactPageComponent {
 
   constructor(private contactService: ContactService) { }
 
-  contacts!: Contact[]
   contacts$!: Observable<Contact[]>
   subscription!: Subscription
   selectedContactId: string = ''
-  prm = Promise.resolve('Resolved!')
-  route: string = 'contacts'
 
   ngOnInit(): void {
     this.contactService.loadContacts()
     this.contacts$ = this.contactService.contacts$
-    // this.subscription = this.contactService.contacts$.subscribe(contacts => {
-    //     this.contacts = contacts
-    // })
   }
 
-  onSelectContactId(contactId: string) {
-    console.log('contactId:', contactId)
-    this.selectedContactId = contactId
+  onRemoveContact(contactId: string) {
+    this.contactService.deleteContact(contactId)
   }
 
-  changeRoute(route: string) {
-    this.route = route
-  }
+
+
 
 
 

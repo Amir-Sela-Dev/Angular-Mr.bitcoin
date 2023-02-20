@@ -151,6 +151,14 @@ export class ContactService {
         this._contacts$.next(this._sort(contacts))
     }
 
+    public getEmptyContact() {
+        return {
+            name: "",
+            email: "",
+            phone: ""
+        }
+    }
+
 
     public getContactById(id: string): Observable<Contact> {
         //mock the server work

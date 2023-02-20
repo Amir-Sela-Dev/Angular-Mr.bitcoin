@@ -1,19 +1,7 @@
 <div class="main-container">
-    <div class="routs flex">
-        <button (click)="changeRoute('home')">Home</button>
-        <button (click)="changeRoute('contacts')">Contacts</button>
-        <button (click)="changeRoute('stats')">Stats</button>
-    </div>
-    <div class="contacts" *ngIf="route === 'contacts'">
-        <ContactDetails *ngIf="selectedContactId; else contactList" [contactId]="selectedContactId"></ContactDetails>
 
-        <ng-template #contactList>
-            <ContactFilter></ContactFilter>
-            <ContactList (selectContact)="onSelectContactId($event)" [contacts]="contacts$|async"></ContactList>
-        </ng-template>
-    </div>
+    <ContactFilter></ContactFilter>
+    <ContactList [contacts]="contacts$|async" (remove)="onRemoveContact($event)"></ContactList>
 
-    <div class="home" *ngIf="route === 'home'">
-        <HomePage></HomePage>
-    </div>
 </div>
+<router-outlet></router-outlet>
