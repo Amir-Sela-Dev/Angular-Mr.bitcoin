@@ -1,12 +1,23 @@
 .details {
     flex-direction: column;
     align-items: center;
+    box-shadow: 0 0 2px 0 rgb(53 65 83 / 12%), 0 2px 4px 0 rgb(53 65 83 / 12%);
+
+    :host {
+        width: 100%;
+        background-color: #f4f7fb;
+    }
 
     .contact-details {
         align-items: center;
         justify-content: center;
         font-size: 16px;
         width: 100%;
+
+        h2 {
+            font-size: 18px;
+
+        }
 
         .contact-info {
             // flex-direction: column;
@@ -49,7 +60,7 @@
     .transfers {
         box-shadow: 0 0 2px 0 rgb(53 65 83 / 12%), 0 2px 4px 0 rgb(53 65 83 / 12%);
         width: 100%;
-        max-width: 900px;
+        max-width: 90%;
         margin-inline: 30px;
         flex-direction: column;
         margin-top: 20px;

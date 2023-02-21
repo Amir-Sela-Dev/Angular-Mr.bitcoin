@@ -23,7 +23,7 @@ main {
     }
 
     img {
-        width: 250px;
+        width: 200px;
     }
 
     .rate-info {
@@ -32,15 +32,18 @@ main {
         gap: 20px;
         align-items: center;
         justify-content: center;
+        margin-top: 30px;
 
         div {
             font-size: 30px;
             color: green;
         }
 
-        h3 {
-            font-size: 30px;
+        h3,
+        h2 {
+            font-size: 22px;
         }
+
 
         span {
             color: green;

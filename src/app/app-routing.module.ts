@@ -4,6 +4,8 @@ import { ContactDetailsPageComponent } from './pages/contact-details-page/contac
 import { ContactEditPageComponent } from './pages/contact-edit-page/contact-edit-page.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { LoginSignupComponent } from './pages/login-signup/login-signup.component';
+import { StatsComponent } from './pages/stats/stats.component';
 import { ContactResolver } from './services/contact.resolver';
 
 const routes: Routes = [
@@ -17,7 +19,8 @@ const routes: Routes = [
   {
     path: 'contact/:id', component: ContactDetailsPageComponent, resolve: { contact: ContactResolver }
   },
-  { path: 'stats', component: ContactEditPageComponent },
+  { path: 'stats', component: StatsComponent },
+  { path: 'signup', component: LoginSignupComponent },
 
 ];
 

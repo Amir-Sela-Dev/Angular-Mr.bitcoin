@@ -10,6 +10,7 @@ header {
 
     .rate-details {
         margin-inline-end: 30px;
+        color: white;
 
         .dollar {
             color: green;
@@ -40,6 +41,17 @@ header {
         }
     }
 
+    .logo {
+        margin-inline-start: 23px;
+        color: white;
+    }
+
+    .header-info {
+        margin-inline-end: 23px;
+        color: white;
+
+    }
+
     .modal {
         display: flex;
         align-items: center;
@@ -54,7 +66,7 @@ header {
         border-radius: 0.5rem;
         box-shadow: 0 0 10px 1px #00000021;
 
-        transform: translate(-80px, 63px);
+        transform: translate(-82px, 63px);
 
         a {
             margin: 0;

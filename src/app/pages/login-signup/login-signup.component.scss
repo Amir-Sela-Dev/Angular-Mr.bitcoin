@@ -1,0 +1,62 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        border: #c9d3e0 solid 1px;
+        background-color: #fff;
+        width: 80%;
+        padding: 20px 30px;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+            .form-group {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .wraper {
+                min-width: 60%;
+                max-width: 300px;
+            }
+
+            label {
+                font-size: 26px;
+            }
+
+            input {
+                width: 100%;
+                height: 30px;
+            }
+
+            button {
+                width: 20%;
+                height: 30px;
+                margin-top: 30px;
+            }
+        }
+    }
+
+    a {
+        color: #52627b;
+        cursor: pointer;
+    }
+}

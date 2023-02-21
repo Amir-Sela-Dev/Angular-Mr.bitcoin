@@ -1,13 +1,11 @@
 <section class="details flex">
     <div class="contact-details flex">
         <div class="contact-info flex">
-            <div class="flex align-center">
-                <img src="https://robohash.org/{{contact._id}}" alt="" />
-                <div class="contact-main-info flex">
-                    <h2>Fullname: {{ contact.name }}</h2>
-                    <h2>Email: {{ contact.email }}</h2>
-                    <h2>Phone number: {{ contact.phone }}</h2>
-                </div>
+            <img src="https://robohash.org/{{contact._id}}" alt="" />
+            <div class="contact-main-info flex">
+                <h2>Fullname: {{ contact.name }}</h2>
+                <h2>Email: {{ contact.email }}</h2>
+                <h2>Phone number: {{ contact.phone }}</h2>
             </div>
             <div class="contact-actions flex">
                 <a [routerLink]="['/contact/edit', contact._id]">
@@ -19,4 +17,8 @@
             </div>
         </div>
     </div>
+    <section class="transfers flex">
+        <TransferFunds *ngIf="contact" [contact]="contact"></TransferFunds>
+    </section>
+    <TransactionList [contact]="contact" [currRoute]="currRoute"></TransactionList>
 </section>

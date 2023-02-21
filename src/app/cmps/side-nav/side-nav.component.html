@@ -12,12 +12,13 @@
             <img src="../../../assets/img/stats.svg" alt="">
             <a>Stats</a>
         </div>
-        <div class="route">
-            <a to="/signup">Signup</a>
+        <div class="route" [routerLink]="['/signup']" [class.isClicked]="path === '/signup'">
+            <img src="../../../assets/img/login.svg" alt="">
+            <a to="/signup">Log in</a>
         </div>
-        <div class="route">
+        <!-- <div class="route">
             <a to="/about">About</a>
-        </div>
+        </div> -->
 
     </nav>
 </section>

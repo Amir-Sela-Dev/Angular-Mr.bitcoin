@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="main">
+        <h2>{{ formTitle }}</h2>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="wraper flex justify-between">
+                <label for="name">Name:</label>
+                <input type="text" id="name" formControlName="name" />
+            </div>
+            <div class="wraper flex justify-between">
+                <label for="email">Email:</label>
+                <input type="text" id="email" formControlName="email" />
+            </div>
+            <div class="wraper flex justify-between" *ngIf="formTitle === 'Sign up'">
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" formControlName="phone" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">{{ formTitle }}</button>
+        </form>
+        <a *ngIf="formTitle === 'Log in'" (click)="formTitle = 'Sign up'">Sign up</a>
+        <a *ngIf="formTitle === 'Sign up'" (click)="formTitle = 'Log in'">Log in</a>
+    </div>
+</div>

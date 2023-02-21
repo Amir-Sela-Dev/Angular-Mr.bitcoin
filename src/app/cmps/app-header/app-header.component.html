@@ -4,14 +4,17 @@
     </div>
     <div class="rate-details flex">
         Bitcoin rate:
-        <div class="dollar"><span class="e">$1 = </span> {{rate|async}}</div>
+        <div class="dollar"><span class="e"> $1 = </span> {{rate|async}} <span style="color: white;">฿</span></div>
     </div>
-    <div class="header-info flex">
+    <div class="header-info flex" (click)="isOptionOpen = !isOptionOpen">
         <div class="user-details flex">
             <img src="{{user.imgUrl}}" alt="" class="user-img" />
             <span>
                 {{ user.name }}
             </span>
+        </div>
+        <div class="modal" *ngIf="isOptionOpen">
+            <button class="modal-option" (click)="switchUser()">Switch user</button>
         </div>
     </div>
 </header>

@@ -22,7 +22,7 @@ export class ContactDetailsPageComponent implements OnInit {
 
   contact!: Contact
   subscription!: Subscription
-
+  currRoute = 'Details'
   async ngOnInit() {
     this.subscription = this.route.data.subscribe(data => {
       console.log(data);

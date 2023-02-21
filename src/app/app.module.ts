@@ -14,6 +14,11 @@ import { ContactFilterComponent } from './cmps/contact-filter/contact-filter.com
 import { AppHeaderComponent } from './cmps/app-header/app-header.component';
 import { SideNavComponent } from './cmps/side-nav/side-nav.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginSignupComponent } from './pages/login-signup/login-signup.component';
+import { TransferFundsComponent } from './cmps/transfer-funds/transfer-funds.component';
+import { TransactionPreviewComponent } from './cmps/transaction-preview/transaction-preview.component';
+import { TransactionListComponent } from './cmps/transaction-list/transaction-list.component';
+import { StatsComponent } from './pages/stats/stats.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +33,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ContactFilterComponent,
     AppHeaderComponent,
     SideNavComponent,
+    LoginSignupComponent,
+    TransferFundsComponent,
+    TransactionPreviewComponent,
+    TransactionListComponent,
+    StatsComponent,
   ],
   imports: [
     BrowserModule,

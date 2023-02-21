@@ -1,0 +1,24 @@
+<section class="transiction-list" *ngIf="user">
+    <div class="list-details flex">
+        <h3>
+            {{ transactions().length }}
+            <span *ngIf="!contact">last</span> Transactions
+        </h3>
+    </div>
+    <ul name="list" class="transiction-list-main">
+        <div class="header flex">
+            <li key="name">
+                <div class="to">To</div>
+            </li>
+            <li key="email">
+                <div class="date">Date</div>
+            </li>
+            <li key="amount">
+                <div class="Phone">Amount</div>
+            </li>
+        </div>
+        <li class="transaction-preview flex" *ngFor="let transaction of transactions()">
+            <TransactionPreview [transaction]="transaction"></TransactionPreview>
+        </li>
+    </ul>
+</section>

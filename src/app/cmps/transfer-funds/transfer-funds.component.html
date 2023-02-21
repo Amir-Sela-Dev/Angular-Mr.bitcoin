@@ -1,0 +1,39 @@
+<section class="transfer-funds flex">
+    <div class="header flex">
+        <h3>Balance</h3>
+        <div class="actions">
+            <button (click)="onTransfer()">Transfer money</button>
+            <!-- <button (click)="onRequest()">Request money</button> -->
+        </div>
+    </div>
+    <div class="main-funds flex">
+        <h5>AVAILABLE BALANCE:</h5>
+        <h2>{{ user.balance }}฿</h2>
+    </div>
+</section>
+<div *ngIf="isModalOpen" class="modal">
+    <div class="modal-container">
+        <div class="switch-modal flex">
+            <button [class]="typeOfTransfer === 'transfer' ? 'active' : ''" (click)="typeOfTransfer = 'transfer'">
+                TRANSFER
+            </button>
+            <button [class]="typeOfTransfer === 'request' ? 'active' : ''" (click)="typeOfTransfer = 'request'">
+                REQUEST MONEY
+            </button>
+        </div>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="wraper flex">
+                <label for="amount">Amount to withdraw from balance </label>
+                <input type="number" class="amount" formControlName="amount" id="amount" />
+            </div>
+
+            <div class="wraper flex">
+                <label for="contactName">Transfer to </label>
+                <input type="text" class="transfer-to" [ngModel]="contact.name" formControlName="contactName"
+                    id="contactName" [readonly]="true" />
+            </div>
+            <button class="add-user">Transfer</button>
+        </form>
+    </div>
+</div>
+<div *ngIf="isModalOpen" (click)="closeModal()" class="dark-screen"></div>
