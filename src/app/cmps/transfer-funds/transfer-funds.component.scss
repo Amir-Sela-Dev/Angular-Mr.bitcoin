@@ -30,6 +30,13 @@ button {
         padding-inline: 20px;
         height: 64px;
         border-bottom: #c9d3e0 solid 1px;
+
+        button {
+            &:hover {
+                background-color: rgba(31, 31, 50, 0.04);
+            }
+
+        }
     }
 
     .main-funds {
@@ -97,6 +104,8 @@ button {
 
         button {
             margin-block-end: 20px;
+
+
         }
 
         .add-user {

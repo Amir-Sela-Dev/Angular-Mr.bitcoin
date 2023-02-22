@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { User } from 'src/app/models/user.modal';
 import { UserService } from 'src/app/services/user.service';
 
-import { bitcoinService } from 'src/app/services/bitcoin.service';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import { BitcoinService } from 'src/app/services/bitcoin.service';
 
 @Component({
   selector: 'AppHeader',
@@ -14,17 +14,18 @@ import { Router } from '@angular/router';
 export class AppHeaderComponent {
   constructor(
     private userService: UserService,
+    private bitcoinService: BitcoinService,
     private router: Router
   ) { }
   // constructor(private bitcoinService: BitcoinService) { }
 
   user!: User
-  rate!: Promise<number>
+  rate!: Observable<number>
   subscription!: Subscription
   isOptionOpen = false
 
   ngOnInit(): void {
-    this.rate = bitcoinService.getRate()
+    this.rate = this.bitcoinService.getRate()
     this.subscription = this.userService.user$.subscribe(user => {
       this.user = user
     })

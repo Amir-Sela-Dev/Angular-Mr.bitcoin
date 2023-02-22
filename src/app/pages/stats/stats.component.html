@@ -1,1 +1,4 @@
-<p>stats works!</p>
+<section *ngIf="prices$|async as prices" class="stats">
+    <MarketPriceChart [prices]="prices"></MarketPriceChart>
+    <AvgMonthsChart [prices]="prices"></AvgMonthsChart>
+</section>

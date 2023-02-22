@@ -4,7 +4,6 @@
             <img src="{{user.imgUrl}}" alt="" />
             <h2>{{ user.name }}</h2>
         </div>
-
         <div class="rate-info flex align-center justify-center">
             <h3>
                 Your balance: <span>{{ user.balance }}฿</span>
@@ -12,7 +11,12 @@
             <h2>Currect BitCoin rate:</h2>
             <div>1$<span class="e"> = </span> {{ rate | async }}฿</div>
         </div>
+        <!-- <section *ngIf="prices$|async as prices" class="stats">
+            <MarketPriceChart [prices]="prices" class="market-chart"></MarketPriceChart>
+        </section> -->
+
     </div>
-    <TransactionList [currRoute]="currRoute"></TransactionList>
+
+    <TransactionList *ngIf="user.transactions.length" [currRoute]="currRoute"></TransactionList>
 
 </main>

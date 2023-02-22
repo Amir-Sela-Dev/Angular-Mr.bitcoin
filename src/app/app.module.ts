@@ -19,6 +19,9 @@ import { TransferFundsComponent } from './cmps/transfer-funds/transfer-funds.com
 import { TransactionPreviewComponent } from './cmps/transaction-preview/transaction-preview.component';
 import { TransactionListComponent } from './cmps/transaction-list/transaction-list.component';
 import { StatsComponent } from './pages/stats/stats.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AvgMonthChartComponent } from './cmps/avg-month-chart/avg-month-chart.component';
+import { MarketPriceChartComponent } from './cmps/market-price-chart/market-price-chart.component';
 
 @NgModule({
   declarations: [
@@ -38,12 +41,15 @@ import { StatsComponent } from './pages/stats/stats.component';
     TransactionPreviewComponent,
     TransactionListComponent,
     StatsComponent,
+    AvgMonthChartComponent,
+    MarketPriceChartComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
 
   ],
   providers: [],

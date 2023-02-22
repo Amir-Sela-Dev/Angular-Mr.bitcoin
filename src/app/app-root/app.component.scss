@@ -11,6 +11,8 @@ main {
     height: calc(100vh - 64px);
     grid-area: main;
     overflow-y: scroll;
+    background-color: #f4f7fb;
+
 }
 
 nav a.router-link-exact-active {

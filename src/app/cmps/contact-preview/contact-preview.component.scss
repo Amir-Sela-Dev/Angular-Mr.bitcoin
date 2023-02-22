@@ -1,3 +1,5 @@
+@import "../../../styles.scss";
+
 :host {
     display: flex;
     align-items: center;
@@ -16,6 +18,7 @@
         padding-inline: 20px;
         flex-grow: 6;
         width: 100%;
+        // justify-content: space-between;
 
         // justify-content: space-between;
         .contact-name,
@@ -28,57 +31,74 @@
             min-width: 32%;
             padding-inline-end: 30px;
         }
-    }
 
-    .wrap-modal {
-        position: relative;
-        z-index: 71;
-    }
 
-    .modal {
-        position: absolute;
-        background-color: #fff;
-        width: 214px;
-        list-style-type: none;
-        padding: 8px;
-        border: 1px solid rgba(0, 0, 0, 0.133);
-        z-index: 70;
-        border-radius: 0.5rem;
-        box-shadow: 0 0 10px 1px #00000021;
+        .wrap-modal {
+            position: relative;
+            z-index: 71;
+        }
 
-        transform: translate(-10px, 95px);
+        .modal {
+            position: absolute;
+            background-color: #fff;
+            width: 214px;
+            list-style-type: none;
+            padding: 8px;
+            border: 1px solid rgba(0, 0, 0, 0.133);
+            z-index: 70;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 10px 1px #00000021;
 
-        .modal-option {
-            height: 32px;
-            width: 198px;
-            padding: 4px 8px;
-            margin: 8px 0;
-            border-radius: 0.3rem;
-            align-items: center;
-            background-color: #f4f7fb;
-            border: #c9d3e0 solid 1px;
-            color: #52627b;
+            transform: translate(-106px, 95px);
 
-            &:hover {
-                background-color: #eaedf3;
+            .modal-option {
+                height: 32px;
+                width: 198px;
+                padding: 4px 8px;
+                margin: 8px 0;
+                border-radius: 0.3rem;
+                align-items: center;
+                background-color: #f4f7fb;
+                border: #c9d3e0 solid 1px;
+                color: #52627b;
+
+                &:hover {
+                    background-color: #eaedf3;
+                }
+            }
+
+            .remove {
+                background-color: rgb(244 67 54);
+                color: #fff;
+
+                &:hover {
+                    background-color: rgba(244, 67, 54, 0.79);
+                }
+
             }
         }
-    }
 
-    .option-img {
-        justify-self: flex-end;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        // padding-inline-end: 30px;
-        max-width: 4%;
-        min-width: 4%;
+        .option-img {
+            justify-self: flex-end;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // padding-inline-end: 30px;
+            max-width: 30px;
+            min-width: 30px;
+            height: 30px;
+            cursor: pointer;
 
-        img {
-            width: 22px;
-            height: 22px;
+            &:hover {
+                background-color: rgba(31, 31, 50, 0.04);
+            }
+
+            img {
+                width: 22px;
+                height: 22px;
+            }
         }
     }
 }

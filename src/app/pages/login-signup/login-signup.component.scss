@@ -1,3 +1,9 @@
+:host {
+    background-color: #f4f7fb;
+    height: 100%;
+
+}
+
 .container {
     display: flex;
     align-items: center;
@@ -14,7 +20,7 @@
         justify-content: center;
         align-items: center;
         margin-top: 30px;
-        border: #c9d3e0 solid 1px;
+        box-shadow: 0 0 2px 0 rgb(53 65 83 / 12%), 0 2px 4px 0 rgb(53 65 83 / 12%);
         background-color: #fff;
         width: 80%;
         padding: 20px 30px;
@@ -40,6 +46,7 @@
 
             label {
                 font-size: 26px;
+                margin-inline-end: 3%;
             }
 
             input {

@@ -6,13 +6,14 @@
     :host {
         width: 100%;
         background-color: #f4f7fb;
+
     }
 
     .contact-details {
         align-items: center;
         justify-content: center;
         font-size: 16px;
-        width: 100%;
+        width: 90%;
 
         h2 {
             font-size: 18px;
@@ -41,6 +42,11 @@
                 color: #1f1f32;
                 border: #1f1f32 solid 1px;
                 border-radius: 4px;
+
+                &:hover {
+                    background-color: rgba(31, 31, 50, 0.04);
+                }
+
             }
         }
 
