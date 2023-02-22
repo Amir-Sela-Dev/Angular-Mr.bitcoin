@@ -9,7 +9,7 @@
         {{ contact.phone }}
     </div>
     <div class="option-img" (click)="toogleModal()">
-        <img src="../../../assets/img/dots.png" alt="" />
+        <img src="assets/img/dots.png" alt="" />
         <div class="modal" *ngIf="isOptionOpen">
             <a [routerLink]="['/contact', contact._id]">
                 <button class="modal-option">Details</button>
